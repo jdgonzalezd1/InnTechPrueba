@@ -25,6 +25,7 @@ public class InputManager : MonoBehaviour
         }
         
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 
     private void OnEnable()

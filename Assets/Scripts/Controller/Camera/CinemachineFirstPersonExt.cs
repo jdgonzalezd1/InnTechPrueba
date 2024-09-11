@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CinemachineFirstPersonExtension : CinemachineExtension
+public class CinemachineFirstPersonExt : CinemachineExtension
 {
     [SerializeField]
     private float maxAngle = 80f;

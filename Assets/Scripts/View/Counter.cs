@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Counter : MonoBehaviour
 {
-
     public static Counter Instance
     {
         get; private set;
@@ -20,11 +19,21 @@ public class Counter : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI boxCount;
 
+    [SerializeField]
+    private TextMeshProUGUI totalCount;
+
     private int cylinders;
 
     private int spheres;
 
     private int boxes;
+
+    private int remainingItems;
+
+    public int TotalItems
+    {
+        get; private set;
+    }
 
     private void Awake()
     {
@@ -41,6 +50,7 @@ public class Counter : MonoBehaviour
     private void Start()
     {
         UpdateCount();
+        TotalItems = 0;
     }
 
     private void UpdateCount()
@@ -48,6 +58,8 @@ public class Counter : MonoBehaviour
         cylinderCount.text = $"{cylinders}";
         sphereCount.text = $"{spheres}";
         boxCount.text = $"{boxes}";
+        totalCount.text = $"Objetos restantes: {remainingItems}";
+        GameManager.Instance.UpdateGameStatus();
     }
 
     public void AddCount(ObjectType type)
@@ -65,10 +77,16 @@ public class Counter : MonoBehaviour
             case ObjectType.Box:
                 boxes++;
                 break;
-
         }
+        TotalItems++;
+        remainingItems--;
 
         UpdateCount();
+    }
+
+    public void TotalCount(int total)
+    {
+        remainingItems = total;        
     }
 
 

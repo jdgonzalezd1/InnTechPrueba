@@ -12,7 +12,9 @@ public class InteractableObject : MonoBehaviour, IInteractable
     private GameObject InteractionIndicator;
 
     [SerializeField]
-    private ObjectType type;    
+    private ObjectType type;
+
+    public UnityEvent objectInteracted;
 
     public bool IsInteracting
     {
@@ -37,6 +39,8 @@ public class InteractableObject : MonoBehaviour, IInteractable
     {
         if (IsInteracting)
         {
+            objectInteracted.Invoke();
+            IsInteracting = false;
             Counter.Instance.AddCount(type);
             gameObject.SetActive(false);
         }

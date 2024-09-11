@@ -27,11 +27,19 @@ public class PlayerMovement : MonoBehaviour
         movement = cameraOrientation.forward * movement.z + cameraOrientation.right * movement.x;
         movement.y = 0f;
         rb.velocity = movement * moveSpeed;
+        rb.MoveRotation(Quaternion.LookRotation(new Vector3(cameraOrientation.forward.x, 0 , cameraOrientation.forward.z)));
     }
 
     private void Movement()
     {
 
+    }
+
+    public void StopMovement()
+    {
+        moveSpeed = 0f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
     }
 
 
