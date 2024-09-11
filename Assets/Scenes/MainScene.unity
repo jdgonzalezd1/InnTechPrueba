@@ -209,8 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxAngle: 80
-  horizontalSpeed: 10
-  verticalSpeed: 10
+  horizontalSpeed: 15
+  verticalSpeed: 15
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

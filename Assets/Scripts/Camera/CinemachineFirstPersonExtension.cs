@@ -17,7 +17,7 @@ public class CinemachineFirstPersonExtension : CinemachineExtension
     private Vector3 startingRotation;
 
     protected override void Awake()
-    {
+    {        
         base.Awake();
         if (startingRotation == null)
         {
