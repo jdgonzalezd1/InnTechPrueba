@@ -10,4 +10,9 @@ public class GameManager : MonoBehaviour
     {
         ObjectsOnScene = FindObjectsByType<InteractableObject>(FindObjectsSortMode.None).Length;
     }
+
+    public void UpdateGameStatus()
+    {
+
+    }
 }
