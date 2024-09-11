@@ -22,11 +22,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 move = InputManager.Instance.GetPlayerMovement();
+        Vector2 move = InputManager.Instance.GetPlayerMovement();        
         movement = new Vector3(move.x, 0, move.y);
         movement = cameraOrientation.forward * movement.z + cameraOrientation.right * movement.x;
         movement.y = 0f;
         rb.velocity = movement * moveSpeed;
+    }
+
+    private void Movement()
+    {
+
     }
 
 
